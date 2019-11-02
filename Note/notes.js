@@ -3,7 +3,7 @@ console.log("notes_project");
 let addBtn = document.getElementById('addBtn');
 addBtn.addEventListener('click', function (e) {
     let addTxt = document.getElementById('addTxt');
-    let notes = localStorage.getItem('notes');
+    let notes = sessionStorage.getItem('notes');
     if (notes == null) {
         notesobj = [];
     }
@@ -11,13 +11,13 @@ addBtn.addEventListener('click', function (e) {
         notesobj = JSON.parse(notes);
     }
     notesobj.push(addTxt.value);
-    localStorage.setItem('notes', JSON.stringify(notesobj));
+    sessionStorage.setItem('notes', JSON.stringify(notesobj));
     addTxt.value = "";
     showNotes();
 });
 
 function showNotes() {
-    let notes = localStorage.getItem('notes');
+    let notes = sessionStorage.getItem('notes');
     let notesElm = document.getElementById('notes');
     if (notes == null) {
         notesobj = [];
@@ -50,7 +50,7 @@ function showNotes() {
 
 function deleteNote(index)
 {
-    let notes = localStorage.getItem('notes');
+    let notes = sessionStorage.getItem('notes');
     // let notesElm = document.getElementById('notes');
     if (notes == null) {
         notesobj = [];
@@ -59,7 +59,7 @@ function deleteNote(index)
         notesobj = JSON.parse(notes);
     }
     notesobj.splice(index,1);
-    localStorage.setItem('notes',JSON.stringify(notesobj));
+    sessionStorage.setItem('notes',JSON.stringify(notesobj));
     showNotes();
 }
 let search=document.getElementById('searchTxt');
