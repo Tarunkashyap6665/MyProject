@@ -1,0 +1,81 @@
+body{
+    background-color:black;
+}
+
+.div{
+
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    /* border-style: double; */
+    left: 100px;
+    top: 150px;
+    transform: translateX(-50%) translateY(-50%);
+}
+.box{
+    width: 100%;
+    height: 100%;
+    /* border-style: dotted; */
+    transform-style: preserve-3d;
+    transform: rotateX(-20deg) rotateY(-30deg);
+    transition: 2s;
+}
+.side{
+    width: 100%;
+    height: 100%;
+    color: white;
+    background-color: rgba(0, 255, 128, .568);
+    position: absolute;
+    /* text-align: center; */
+    top: 0px;
+    left: 0px;
+    /* padding-top: 50%; */
+    padding-left: 65px;
+    padding-top: 45px;
+    /* display: inline-block; */
+    animation-name: cubic;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+}
+/* .box:hover{
+    transform: rotateY(100deg);
+} */
+
+.bottom{
+    box-shadow: 5px 5px 60px grey;
+    transform: rotateX(90deg);
+    transform-origin: bottom;
+}
+
+.top{
+    box-shadow: 5px 5px 60px grey;
+    transform: rotateX(-90deg);
+    transform-origin: top;
+
+}
+
+.right{
+    box-shadow: 5px 5px 60px grey;
+    transform: rotateY(-90deg);
+    transform-origin:right ;
+}
+.left{
+    box-shadow: 5px 5px 60px grey;
+    transform: rotateY(-270deg);
+    transform-origin: left;
+}
+.front{
+    box-shadow: 5px 5px 60px grey;
+}
+.back{
+    box-shadow: 5px 5px 60px grey;
+    transform: translateZ(-150px);
+}
+
+@keyframes cubic{
+    0%{ left: 0px;transform: rotateX(0deg);}
+    25%{left:1200px;transform: rotate(90deg);background-color: rgba(255, 0, 149, 0.486);}
+    50%{top: 30px;transform: rotate(270deg);background-color: rgba(255, 60, 0, 0.493);}
+    100%{right:1200px;background-color: rgba(17, 0, 255, 0.432);}
+}
